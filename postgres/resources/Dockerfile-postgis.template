@@ -1,7 +1,7 @@
 FROM {{BASE_IMAGE}}
 
 ENV PGUSER $POSTGRES_USER
-ENV POSTGIS_VERSION 2.5.2
+ENV POSTGIS_VERSION 2.5.3
 
 RUN if which apt-get > /dev/null ; then \
       apt-get update \
