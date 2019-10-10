@@ -6,11 +6,8 @@ ENV PGUSER $POSTGRES_USER
 ENV POSTGIS_PKG_VER 2.5
 ENV POSTGIS_VERSION 2.5.3
 
-#DEBUG
-RUN echo $PG_MAJOR
-
 RUN if which apt-get > /dev/null ; then \
-      if [ $PG_MAJOR == 12 ]; then \
+      if [ $PG_MAJOR = 12 ]; then \
 	    echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg-testing main" >> /etc/apt/sources.list.d/pgdg.list && \
         apt-get update && \
         apt-get install -y --no-install-recommends \
